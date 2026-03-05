@@ -127,7 +127,6 @@ const Contact = () => {
     if (name.trim().split(" ").length < 2) return "Please enter your full name (first and last)";
     return "";
   };
-  // ================ END ENHANCED NAME VALIDATION ================
 
   // ================ ENHANCED EMAIL VALIDATION - ONLY .COM ================
   const validateEmail = (email) => {
@@ -1181,7 +1180,7 @@ const Contact = () => {
     /* ---------- FAQ SECTION ---------- */
     faqSection: {
       padding: isMobile ? "60px 5%" : isTablet ? "80px 6%" : "100px 8%",
-      backgroundColor: "#ffffff"
+      backgroundColor: "#e0dcdc"
     },
 
     faqTitle: {
@@ -1233,7 +1232,7 @@ const Contact = () => {
     /* ---------- CTA SECTION ---------- */
     ctaSection: {
       padding: isMobile ? "60px 5%" : isTablet ? "70px 6%" : "80px 8%",
-      background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+      background: "linear-gradient(135deg, #b3b3b5 0%, #cbcdcf 100%)",
       color: "#fff",
       textAlign: "center"
     },
@@ -1473,7 +1472,7 @@ const Contact = () => {
             <div style={styles.socialSection}>
               <div style={styles.socialTitle}>Follow Us</div>
               <div style={styles.socialLinks}>
-                {["📘", "🐦", "📷", "🔗"].map((icon, index) => (
+                {["📘", "📷", "🔗"].map((icon, index) => (
                   <div
                     key={index}
                     style={styles.socialLink}
@@ -2008,9 +2007,8 @@ const Contact = () => {
           </div>
           <div>
             <h4 style={{ color: "#fff", marginBottom: isMobile ? "15px" : "24px", fontSize: isMobile ? "18px" : "20px" }}>Legal</h4>
-            <Link to="/privacy" style={styles.footerLink}>Privacy Policy</Link>
-            <Link to="/terms" style={styles.footerLink}>Terms of Service</Link>
-            <Link to="/faq" style={styles.footerLink}>FAQ</Link>
+            <Link to="/PrivacyPolicy" style={styles.footerLink}>Privacy Policy</Link>
+            <Link to="/TearmsCondition" style={styles.footerLink}>Terms of Service</Link>
           </div>
           <div>
             <h4 style={{ color: "#fff", marginBottom: isMobile ? "15px" : "24px", fontSize: isMobile ? "18px" : "20px" }}>Contact</h4>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Appointment() {
   const navigate = useNavigate();
@@ -1245,6 +1245,15 @@ export default function Appointment() {
     },
   };
 
+  // Custom style for footer logo (reusing header logo style with white text)
+  const footerLogoStyle = {
+    ...styles.logo,
+    WebkitTextFillColor: colors.white, // override gradient to solid white for footer
+    background: 'none',
+    color: colors.white,
+    marginBottom: '16px',
+  };
+
   const features = [
     {
       icon: '🎯',
@@ -1883,156 +1892,54 @@ export default function Appointment() {
         </section>
       </main>
 
+      {/* FOOTER (corrected) */}
       <footer style={styles.footer}>
         <div style={styles.footerContainer}>
           <div style={styles.footerGrid}>
+            {/* Column 1: Logo & Description */}
             <div style={styles.footerSection}>
-              <h3 style={styles.footerTitle}>ARCTITECH</h3>
+              <div style={footerLogoStyle}>ARCTITECH</div>
               <p style={styles.footerText}>
-                Creating timeless architecture that inspires, transforms, and elevates the human experience.
+                Creating timeless architecture that inspires and transforms.
               </p>
-              {isMobile && (
-                <div style={styles.newsletterForm}>
-                  <input
-                    type="email"
-                    placeholder="Your email"
-                    value={newsletterEmail}
-                    onChange={(e) => setNewsletterEmail(e.target.value)}
-                    style={styles.newsletterInput}
-                  />
-                  <button style={styles.newsletterButton}>
-                    Subscribe
-                  </button>
-                </div>
-              )}
             </div>
-            
+
+            {/* Column 2: Quick Links */}
             <div style={styles.footerSection}>
-              <h4 style={styles.footerTitle}>Company</h4>
+              <h4 style={styles.footerTitle}>Quick Links</h4>
               <div style={styles.footerLinks}>
-                {footerLinks.company.map((item, index) => (
-                  <button
-                    key={index}
-                    style={{
-                      ...styles.footerLink,
-                      ...(hoveredLink === `company-${index}` && !isMobile ? {
-                        color: colors.primary[400],
-                        transform: 'translateX(5px)',
-                      } : {}),
-                    }}
-                    onMouseEnter={() => !isMobile && setHoveredLink(`company-${index}`)}
-                    onMouseLeave={() => !isMobile && setHoveredLink(null)}
-                    onClick={() => handleNavigation(`/${item.toLowerCase().replace(' ', '-')}`)}
-                  >
-                    {item}
-                  </button>
-                ))}
+                <Link to="/" style={styles.footerLink}>Home</Link>
+                <Link to="/about" style={styles.footerLink}>About Us</Link>
+                <Link to="/services" style={styles.footerLink}>Services</Link>
+                <Link to="/project" style={styles.footerLink}>Projects</Link>
+                <Link to="/contact" style={styles.footerLink}>Contact</Link>
+                <Link to="/appointment" style={styles.footerLink}>Appointment</Link>
               </div>
             </div>
-            
+
+            {/* Column 3: Legal */}
             <div style={styles.footerSection}>
-              <h4 style={styles.footerTitle}>Services</h4>
+              <h4 style={styles.footerTitle}>Legal</h4>
               <div style={styles.footerLinks}>
-                {footerLinks.services.map((item, index) => (
-                  <button
-                    key={index}
-                    style={{
-                      ...styles.footerLink,
-                      ...(hoveredLink === `services-${index}` && !isMobile ? {
-                        color: colors.primary[400],
-                        transform: 'translateX(5px)',
-                      } : {}),
-                    }}
-                    onMouseEnter={() => !isMobile && setHoveredLink(`services-${index}`)}
-                    onMouseLeave={() => !isMobile && setHoveredLink(null)}
-                    onClick={() => handleNavigation(`/services/${item.toLowerCase()}`)}
-                  >
-                    {item}
-                  </button>
-                ))}
+                <Link to="/PrivacyPolicy" style={styles.footerLink}>Privacy Policy</Link>
+                <Link to="/TermsCondition" style={styles.footerLink}>Terms of Service</Link>
               </div>
             </div>
-            
+
+            {/* Column 4: Contact */}
             <div style={styles.footerSection}>
-              <h4 style={styles.footerTitle}>Support</h4>
-              <div style={styles.footerLinks}>
-                {footerLinks.support.map((item, index) => (
-                  <button
-                    key={index}
-                    style={{
-                      ...styles.footerLink,
-                      ...(hoveredLink === `support-${index}` && !isMobile ? {
-                        color: colors.primary[400],
-                        transform: 'translateX(5px)',
-                      } : {}),
-                    }}
-                    onMouseEnter={() => !isMobile && setHoveredLink(`support-${index}`)}
-                    onMouseLeave={() => !isMobile && setHoveredLink(null)}
-                    onClick={() => handleNavigation(`/${item.toLowerCase().replace(' ', '-')}`)}
-                  >
-                    {item}
-                  </button>
-                ))}
-              </div>
-              
-              <div style={styles.footerSocial}>
-                {footerLinks.connect.map((item, index) => (
-                  <button
-                    key={index}
-                    style={{
-                      ...styles.socialIcon,
-                      ...(hoveredLink === `social-${index}` && !isMobile ? {
-                        backgroundColor: colors.primary[600],
-                        transform: 'translateY(-3px)',
-                      } : {}),
-                    }}
-                    onMouseEnter={() => !isMobile && setHoveredLink(`social-${index}`)}
-                    onMouseLeave={() => !isMobile && setHoveredLink(null)}
-                    onClick={() => window.open(`https://${item.toLowerCase()}.com`, '_blank')}
-                    aria-label={item}
-                  >
-                    {item === 'Facebook' && '📘'}
-                    {item === 'Instagram' && '📷'}
-                    {item === 'LinkedIn' && '🔗'}
-                    {item === 'Twitter' && '🐦'}
-                  </button>
-                ))}
-              </div>
+              <h4 style={styles.footerTitle}>Contact</h4>
+              <p style={styles.footerText}>contact@arctitech.com</p>
+              <p style={styles.footerText}>+1 (555) 123-4567</p>
             </div>
           </div>
 
-          {!isMobile && (
-            <div style={{ marginBottom: '30px', textAlign: 'center' }}>
-              <h4 style={{...styles.footerTitle, borderBottom: 'none', marginBottom: '15px'}}>
-                Subscribe to Our Newsletter
-              </h4>
-              <div style={styles.newsletterForm}>
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  value={newsletterEmail}
-                  onChange={(e) => setNewsletterEmail(e.target.value)}
-                  style={{...styles.newsletterInput, width: '300px'}}
-                />
-                <button style={styles.newsletterButton}>
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          )}
-
+          {/* Bottom Bar */}
           <div style={styles.footerBottom}>
             <span>© {new Date().getFullYear()} ARCTITECH. All rights reserved.</span>
             <div style={styles.footerBottomLinks}>
-              <button style={styles.footerBottomLink} onClick={() => handleNavigation('/privacy')}>
-                Privacy Policy
-              </button>
-              <button style={styles.footerBottomLink} onClick={() => handleNavigation('/terms')}>
-                Terms of Service
-              </button>
-              <button style={styles.footerBottomLink} onClick={() => handleNavigation('/sitemap')}>
-                Sitemap
-              </button>
+              <Link to="/PrivacyPolicy" style={styles.footerBottomLink}>Privacy</Link>
+              <Link to="/TermsCondition" style={styles.footerBottomLink}>Terms</Link>
             </div>
           </div>
         </div>
@@ -2116,7 +2023,7 @@ export default function Appointment() {
 
           ::-webkit-scrollbar-thumb {
             background: ${colors.primary[400]};
-            borderRadius: 4px;
+            border-radius: 4px;
           }
 
           ::-webkit-scrollbar-thumb:hover {

@@ -525,7 +525,7 @@ const Project = () => {
     /* ---------- CTA SECTION ---------- */
     ctaSection: {
       padding: isMobile ? "60px 5%" : "80px 8%",
-      background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+      background: "linear-gradient(135deg, #77797d 0%, #767778 100%)",
       textAlign: "center",
       color: "#fff",
     },
@@ -831,12 +831,11 @@ const Project = () => {
             <Link to="/contact" style={styles.footerLink}>Contact</Link>
             <Link to="/appointment" style={styles.footerLink}>Appointment</Link>
           </div>
-          <div>
-            <h4 style={{ color: "#fff", marginBottom: isMobile ? "15px" : "24px", fontSize: isMobile ? "18px" : "20px" }}>Legal</h4>
-            <Link to="/privacy" style={styles.footerLink}>Privacy Policy</Link>
-            <Link to="/terms" style={styles.footerLink}>Terms of Service</Link>
-            <Link to="/faq" style={styles.footerLink}>FAQ</Link>
-          </div>
+           <div>
+                    <h4 style={{ color: "#fff", marginBottom: isMobile ? "15px" : "24px", fontSize: isMobile ? "18px" : "20px" }}>Legal</h4>
+                                <Link to="/PrivacyPolicy" style={styles.footerLink}>Privacy Policy</Link>
+                                <Link to="/TearmsCondition" style={styles.footerLink}>Terms of Service</Link>
+                              </div>
           <div>
             <h4 style={{ color: "#fff", marginBottom: isMobile ? "15px" : "24px", fontSize: isMobile ? "18px" : "20px" }}>Contact</h4>
             <p style={{ color: "rgba(255,255,255,0.7)", marginBottom: "10px", fontSize: isMobile ? "14px" : "16px" }}>

@@ -352,7 +352,7 @@ export default function Home() {
 
     /* ---------- SERVICE CARDS (Responsive) ---------- */
     card: {
-      backgroundColor: "#fff",
+      backgroundColor: "#b7b1b1",
       padding: isMobile ? "40px 24px" : "48px 32px",
       borderRadius: "30px",
       boxShadow: "0 20px 40px rgba(0,0,0,0.03)",
@@ -382,7 +382,7 @@ export default function Home() {
     },
 
     cardDesc: {
-      color: "#64748b",
+      color: "#080808",
       lineHeight: "1.7",
       fontSize: isMobile ? "15px" : "16px",
     },
@@ -456,7 +456,7 @@ export default function Home() {
       borderRadius: "50px",
       fontSize: isMobile ? "15px" : "16px",
       fontWeight: "600",
-      color: "#64748b",
+      color: "#474a4a",
       cursor: "pointer",
       transition: "all 0.3s ease",
       whiteSpace: "nowrap",
@@ -473,7 +473,7 @@ export default function Home() {
       maxWidth: "900px",
       margin: "0 auto",
       padding: isMobile ? "30px 20px" : "40px",
-      backgroundColor: "#fff",
+      backgroundColor: "#decfcf",
       borderRadius: "40px",
       boxShadow: "0 20px 40px rgba(0,0,0,0.03)",
       animation: "fadeIn 0.5s ease",
@@ -496,7 +496,7 @@ export default function Home() {
 
     consultationTabCard: {
       padding: isMobile ? "24px" : "32px",
-      background: colors.gray[90],
+      backgroundColor: "#ccc6c6",
       borderRadius: "24px",
       textAlign: "center",
       transition: "0.3s",
@@ -511,12 +511,12 @@ export default function Home() {
       fontSize: isMobile ? "18px" : "20px",
       fontWeight: "700",
       marginBottom: "10px",
-      color: "#e1e5ec",
+      color: "#0e1013",
     },
 
     consultationTabCardDesc: {
       fontSize: isMobile ? "14px" : "15px",
-      color: "#64748b",
+      color: "#0d0e10",
       lineHeight: "1.6",
     },
 
@@ -545,7 +545,9 @@ export default function Home() {
     /* ---------- CONSULTATION CTA (From Appointment Page) ---------- */
     consultationSection: {
       padding: isMobile ? '60px 5%' : '80px 8%',
-      background: `linear-gradient(135deg, ${colors.primary[900]} 0%, ${colors.primary[700]} 100%)`,
+      background: "linear-gradient(135deg, #686869 0%, #8b8c8d 100%)",
+
+      // background: `linear-gradient(135deg, ${colors.primary[900]} 0%, ${colors.primary[700]} 100%)`,
       color: 'white',
       textAlign: 'center',
     },
@@ -581,7 +583,7 @@ export default function Home() {
     /* ---------- ACHIEVEMENTS (Responsive) ---------- */
     achievementSection: {
       padding: isMobile ? "80px 5%" : isTablet ? "100px 6%" : "120px 8%",
-      background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+      background: "linear-gradient(135deg, #b3b4b7 0%, #bfc2c5 100%)",
       color: "#fff",
       textAlign: "center",
       position: "relative",
@@ -600,7 +602,7 @@ export default function Home() {
     },
 
     achievementCard: {
-      background: "rgba(255,255,255,0.03)",
+      background: "rgba(96, 96, 96, 0.03)",
       backdropFilter: "blur(10px)",
       padding: isMobile ? "40px 24px" : "48px 32px",
       borderRadius: "30px",
@@ -677,7 +679,7 @@ export default function Home() {
     },
 
     projectCategory: {
-      color: "rgba(255,255,255,0.8)",
+      color: "rgba(10, 8, 8, 0.8)",
       fontSize: isMobile ? "12px" : "14px",
       textTransform: "uppercase",
       letterSpacing: "2px",
@@ -688,7 +690,7 @@ export default function Home() {
     /* ---------- CTA SECTION (Responsive) ---------- */
     ctaSection: {
       padding: isMobile ? "60px 5%" : "100px 8%",
-      background: "linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)",
+      background: "linear-gradient(135deg, #c4c7c8 0%, #bcbfc0 100%)",
       textAlign: "center",
       color: "#fff",
     },
@@ -1219,6 +1221,11 @@ export default function Home() {
             <Link to="/contact" style={styles.footerLink}>Contact</Link>
             <Link to="/appointment" style={styles.footerLink}>Appointment</Link>
           </div>
+           <div>
+              <h4 style={{ color: "#fff", marginBottom: isMobile ? "15px" : "24px", fontSize: isMobile ? "18px" : "20px" }}>Legal</h4>
+                <Link to="/PrivacyPolicy" style={styles.footerLink}>Privacy Policy</Link>
+                <Link to="/TearmsCondition" style={styles.footerLink}>Terms of Service</Link>
+                    </div>
           <div>
             <h4 style={{ color: "#fff", marginBottom: isMobile ? "15px" : "24px", fontSize: isMobile ? "18px" : "20px" }}>Contact</h4>
             <p style={{ color: "rgba(255,255,255,0.7)", marginBottom: "10px", fontSize: isMobile ? "15px" : "16px" }}>

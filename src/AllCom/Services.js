@@ -55,8 +55,7 @@ const Service = () => {
   const tabItems = [
     { id: "home", label: "Home", path: "/" },
     { id: "about", label: "About", path: "/about" },
-        { id: "contact", label: "Contact", path: "/contact" },
-
+    { id: "contact", label: "Contact", path: "/contact" },
     { id: "services", label: "Services", path: "/services" },
     { id: "projects", label: "Projects", path: "/project" },
     { id: "appointment", label: "Appointment", path: "/appointment" },
@@ -470,25 +469,11 @@ const Service = () => {
 
     cardFooter: {
       display: "flex",
-      justifyContent: "space-between",
+      justifyContent: "flex-end",  // Align category tag to the right
       alignItems: "center",
       marginTop: isMobile ? "24px" : "32px",
       paddingTop: isMobile ? "20px" : "24px",
       borderTop: "1px solid #e2e8f0"
-    },
-
-    learnMore: {
-      display: "flex",
-      alignItems: "center",
-      gap: "8px",
-      color: "#0284c7",
-      fontWeight: "600",
-      fontSize: isMobile ? "14px" : "15px",
-      transition: "all 0.3s ease"
-    },
-
-    arrow: {
-      transition: "transform 0.3s ease"
     },
 
     /* ---------- PROCESS SECTION ---------- */
@@ -570,7 +555,7 @@ const Service = () => {
     /* ---------- CTA SECTION ---------- */
     ctaSection: {
       padding: isMobile ? "60px 5%" : isTablet ? "80px 6%" : "100px 8%",
-      background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+      background: "linear-gradient(135deg, #858587 0%, #8e8e8f 100%)",
       color: "#fff",
       textAlign: "center"
     },
@@ -787,9 +772,7 @@ const Service = () => {
                   e.currentTarget.style.transform = "translateY(-12px)";
                   e.currentTarget.style.boxShadow = "0 30px 60px rgba(0,0,0,0.08)";
                   const icon = e.currentTarget.querySelector('.service-icon');
-                  const arrow = e.currentTarget.querySelector('.arrow');
                   if (icon) icon.style.transform = "scale(1.1)";
-                  if (arrow) arrow.style.transform = "translateX(5px)";
                 }
               }}
               onMouseLeave={(e) => {
@@ -797,9 +780,7 @@ const Service = () => {
                   e.currentTarget.style.transform = "translateY(0)";
                   e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.03)";
                   const icon = e.currentTarget.querySelector('.service-icon');
-                  const arrow = e.currentTarget.querySelector('.arrow');
                   if (icon) icon.style.transform = "scale(1)";
-                  if (arrow) arrow.style.transform = "translateX(0)";
                 }
               }}
             >
@@ -822,10 +803,6 @@ const Service = () => {
               </div>
 
               <div style={styles.cardFooter}>
-                <span style={styles.learnMore}>
-                  Learn More
-                  <span className="arrow" style={styles.arrow}>→</span>
-                </span>
                 <span style={{ color: service.color, fontWeight: "600", fontSize: isMobile ? "13px" : "14px" }}>
                   {service.category}
                 </span>
@@ -903,20 +880,19 @@ const Service = () => {
               Creating timeless architecture that inspires and transforms.
             </p>
           </div>
+         
           <div>
-            <h4 style={{ color: "#fff", marginBottom: isMobile ? "15px" : "24px", fontSize: isMobile ? "18px" : "20px" }}>Services</h4>
-            <Link to="/services" style={styles.footerLink}>Architectural Design</Link>
-            <Link to="/services" style={styles.footerLink}>Interior Design</Link>
-            <Link to="/services" style={styles.footerLink}>Urban Planning</Link>
-            <Link to="/services" style={styles.footerLink}>3D Visualization</Link>
-          </div>
-          <div>
-            <h4 style={{ color: "#fff", marginBottom: isMobile ? "15px" : "24px", fontSize: isMobile ? "18px" : "20px" }}>Company</h4>
+            <h4 style={{ color: "#fff", marginBottom: isMobile ? "15px" : "24px", fontSize: isMobile ? "18px" : "20px" }}>Quick Links</h4>
             <Link to="/about" style={styles.footerLink}>About Us</Link>
             <Link to="/project" style={styles.footerLink}>Projects</Link>
             <Link to="/contact" style={styles.footerLink}>Contact</Link>
             <Link to="/appointment" style={styles.footerLink}>Appointment</Link>
           </div>
+           <div>
+          <h4 style={{ color: "#fff", marginBottom: isMobile ? "15px" : "24px", fontSize: isMobile ? "18px" : "20px" }}>Legal</h4>
+                      <Link to="/PrivacyPolicy" style={styles.footerLink}>Privacy Policy</Link>
+                      <Link to="/TearmsCondition" style={styles.footerLink}>Terms of Service</Link>
+                    </div>
           <div>
             <h4 style={{ color: "#fff", marginBottom: isMobile ? "15px" : "24px", fontSize: isMobile ? "18px" : "20px" }}>Contact</h4>
             <p style={{ color: "rgba(255,255,255,0.7)", marginBottom: "10px", fontSize: isMobile ? "14px" : "16px" }}>

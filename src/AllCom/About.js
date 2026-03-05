@@ -652,7 +652,7 @@ const About = () => {
     /* ---------- VALUES SECTION ---------- */
     valuesSection: {
       padding: isMobile ? "50px 20px" : "100px 10%",
-      background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+      background: "linear-gradient(135deg, #a6a7a7 0%, #adaeaf 100%)",
       color: "#fff",
     },
 
@@ -666,7 +666,7 @@ const About = () => {
     valueCard: {
       textAlign: "center",
       padding: isMobile ? "30px 20px" : "40px 24px",
-      background: "rgba(255,255,255,0.03)",
+      background: "rgba(174, 98, 98, 0.77)",
       backdropFilter: "blur(10px)",
       borderRadius: isMobile ? "20px" : "30px",
       border: "1px solid rgba(255,255,255,0.05)",
@@ -694,7 +694,7 @@ const About = () => {
     /* ---------- CTA SECTION ---------- */
     ctaSection: {
       padding: isMobile ? "50px 20px" : "80px 10%",
-      background: "linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)",
+      background: "linear-gradient(135deg, #5b5f61 0%, #717272 100%)",
       textAlign: "center",
       color: "#fff",
     },
@@ -1074,6 +1074,11 @@ const About = () => {
             <Link to="/contact" style={styles.footerLink}>Contact</Link>
             <Link to="/appointment" style={styles.footerLink}>Appointment</Link>
           </div>
+           <div>
+                      <h4 style={{ color: "#fff", marginBottom: isMobile ? "15px" : "24px", fontSize: isMobile ? "18px" : "20px" }}>Legal</h4>
+                      <Link to="/PrivacyPolicy" style={styles.footerLink}>Privacy Policy</Link>
+                      <Link to="/TearmsCondition" style={styles.footerLink}>Terms of Service</Link>
+                    </div>
           <div>
             <h4 style={{ color: "#fff", marginBottom: isMobile ? "15px" : "20px", fontSize: isMobile ? "18px" : "20px" }}>Contact</h4>
             <p style={{ color: "rgba(255,255,255,0.7)", marginBottom: "8px", fontSize: isMobile ? "14px" : "16px" }}>
